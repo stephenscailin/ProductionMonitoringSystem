@@ -1,0 +1,34 @@
+{
+    "stations": [
+        {
+            "name": "Station 1",
+            "count": 419,
+            "signal": "PART_DETECTED"
+        },
+        {
+            "name": "Station 2",
+            "count": 375,
+            "signal": "PART_DETECTED"
+        },
+        {
+            "name": "Station 3",
+            "count": 506,
+            "signal": "PART_DETECTED"
+        },
+        {
+            "name": "Station 4",
+            "count": 280,
+            "signal": "PART_DETECTED"
+        },
+        {
+            "name": "Station 5",
+            "count": 417,
+            "signal": "PART_DETECTED"
+        },
+        {
+            "name": "Station 6",
+            "count": 440,
+            "signal": "PART_DETECTED"
+        }
+    ]
+}

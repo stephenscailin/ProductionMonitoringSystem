@@ -2,8 +2,33 @@
     "stations": [
         {
             "name": "Station 1",
-            "count": 622,
-            "status": "RUNNING"
+            "count": 414,
+            "status": "LOW OUTPUT"
+        },
+        {
+            "name": "Station 2",
+            "count": 370,
+            "status": "LOW OUTPUT"
+        },
+        {
+            "name": "Station 3",
+            "count": 501,
+            "status": "LOW OUTPUT"
+        },
+        {
+            "name": "Station 4",
+            "count": 278,
+            "status": "LOW OUTPUT"
+        },
+        {
+            "name": "Station 5",
+            "count": 413,
+            "status": "LOW OUTPUT"
+        },
+        {
+            "name": "Station 6",
+            "count": 435,
+            "status": "LOW OUTPUT"
         }
     ]
 }
