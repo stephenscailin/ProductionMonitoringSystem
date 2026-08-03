@@ -1,0 +1,9 @@
+{
+    "stations": [
+        {
+            "name": "Station 1",
+            "count": 622,
+            "status": "RUNNING"
+        }
+    ]
+}
