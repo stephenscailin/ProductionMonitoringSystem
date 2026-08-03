@@ -151,7 +151,8 @@ def update_dashboard():
             {
                 "name": station["name"],
                 "count": station["count"],
-                "status": status
+                "status": status,
+                "rate": rate
             }
         )
 

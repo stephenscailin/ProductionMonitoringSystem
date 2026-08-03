@@ -2,33 +2,39 @@
     "stations": [
         {
             "name": "Station 1",
-            "count": 414,
-            "status": "LOW OUTPUT"
+            "count": 1783,
+            "status": "LOW OUTPUT",
+            "rate": 0.78
         },
         {
             "name": "Station 2",
-            "count": 370,
-            "status": "LOW OUTPUT"
+            "count": 1600,
+            "status": "LOW OUTPUT",
+            "rate": 0.78
         },
         {
             "name": "Station 3",
-            "count": 501,
-            "status": "LOW OUTPUT"
+            "count": 1912,
+            "status": "LOW OUTPUT",
+            "rate": 0.39
         },
         {
             "name": "Station 4",
-            "count": 278,
-            "status": "LOW OUTPUT"
+            "count": 1332,
+            "status": "LOW OUTPUT",
+            "rate": 0.39
         },
         {
             "name": "Station 5",
-            "count": 413,
-            "status": "LOW OUTPUT"
+            "count": 1603,
+            "status": "LOW OUTPUT",
+            "rate": 0.78
         },
         {
             "name": "Station 6",
-            "count": 435,
-            "status": "LOW OUTPUT"
+            "count": 1792,
+            "status": "LOW OUTPUT",
+            "rate": 0.39
         }
     ]
 }

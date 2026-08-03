@@ -2,32 +2,32 @@
     "stations": [
         {
             "name": "Station 1",
-            "count": 419,
+            "count": 1784,
             "signal": "PART_DETECTED"
         },
         {
             "name": "Station 2",
-            "count": 375,
+            "count": 1601,
             "signal": "PART_DETECTED"
         },
         {
             "name": "Station 3",
-            "count": 506,
+            "count": 1913,
             "signal": "PART_DETECTED"
         },
         {
             "name": "Station 4",
-            "count": 280,
+            "count": 1333,
             "signal": "PART_DETECTED"
         },
         {
             "name": "Station 5",
-            "count": 417,
-            "signal": "PART_DETECTED"
+            "count": 1603,
+            "signal": "IDLE"
         },
         {
             "name": "Station 6",
-            "count": 440,
+            "count": 1793,
             "signal": "PART_DETECTED"
         }
     ]
