@@ -9,7 +9,7 @@ from pathlib import Path
 
 TARGET_RATE = 6  # parts per minute
 
-RATE_WINDOW = 10  # seconds for testing
+RATE_WINDOW = 60  # seconds for testing
 
 
 # -----------------------------
