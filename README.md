@@ -43,15 +43,15 @@ ProductionMonitoringSystem/
 │
 ├── arduino
 │
-├── data
+├── data/
 │   ├── sensor_data.json
 │   ├── production_log.csv
 │   └── dashboard_data.json
 │
-├── simulator
+├── simulator/
 │   └── sensor_simulator.py
 │
-├── software
+├── software/
 │   ├── production_counter.py
 │   ├── dashboard.py
 │   ├── dashboard_v2.py

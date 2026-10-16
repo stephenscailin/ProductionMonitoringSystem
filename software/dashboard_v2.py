@@ -7,7 +7,9 @@ from PyQt6.QtWidgets import (
     QWidget,
     QLabel,
     QHBoxLayout,
-    QVBoxLayout
+    QVBoxLayout,
+    QPushButton,
+    QMessageBox
 )
 
 from PyQt6.QtCore import QTimer, Qt
@@ -29,6 +31,12 @@ dashboard_file = (
     "dashboard_data.json"
 )
 
+sensor_file = (
+    project_folder /
+    "data" /
+    "sensor_data.json"
+)
+
 
 # -----------------------------
 # Main Dashboard
@@ -44,7 +52,6 @@ class ProductionDashboard(QWidget):
             "Production Monitoring System"
         )
 
-        # Windows 11 friendly size
         self.resize(
             1280,
             720
@@ -56,10 +63,24 @@ class ProductionDashboard(QWidget):
                 background-color:#2B2B2B;
                 color:white;
             }
+
+            QPushButton {
+                background-color:#016180;
+                color:white;
+                border-radius:8px;
+                padding:10px;
+                font-size:14px;
+            }
+
+            QPushButton:hover {
+                background-color:#0182A8;
+            }
         """)
 
 
+        # -----------------------------
         # Main Layout
+        # -----------------------------
 
         main_layout = QVBoxLayout()
 
@@ -95,13 +116,38 @@ class ProductionDashboard(QWidget):
 
 
         # -----------------------------
+        # Reset Button
+        # -----------------------------
+
+        reset_button = QPushButton(
+            "RESET PRODUCTION COUNT"
+        )
+
+        reset_button.setFont(
+            QFont(
+                "Segoe UI",
+                12,
+                QFont.Weight.Bold
+            )
+        )
+
+
+        reset_button.clicked.connect(
+            self.reset_counts
+        )
+
+
+        main_layout.addWidget(
+            reset_button
+        )
+
+
+        # -----------------------------
         # Content Layout
         # -----------------------------
 
         content_layout = QHBoxLayout()
 
-
-        # LEFT SIDE - Stations
 
         station_panel = QVBoxLayout()
 
@@ -139,7 +185,9 @@ class ProductionDashboard(QWidget):
         station_panel.addStretch()
 
 
-        # RIGHT SIDE - Chart
+        # -----------------------------
+        # Chart
+        # -----------------------------
 
         self.chart = ProductionChart()
 
@@ -148,6 +196,7 @@ class ProductionDashboard(QWidget):
             station_panel,
             2
         )
+
 
         content_layout.addWidget(
             self.chart,
@@ -185,7 +234,68 @@ class ProductionDashboard(QWidget):
 
 
     # -----------------------------
-    # Read JSON
+    # Reset Production Counts
+    # -----------------------------
+
+    def reset_counts(self):
+
+        answer = QMessageBox.question(
+            self,
+            "Reset Confirmation",
+            "Are you sure you want to reset all production counts?",
+            QMessageBox.StandardButton.Yes |
+            QMessageBox.StandardButton.No
+        )
+
+
+        if answer != QMessageBox.StandardButton.Yes:
+
+            return
+
+
+        try:
+
+            with open(
+                sensor_file,
+                "r"
+            ) as file:
+
+                data = json.load(file)
+
+
+            for station in data["stations"]:
+
+                station["count"] = 0
+
+
+            with open(
+                sensor_file,
+                "w"
+            ) as file:
+
+                json.dump(
+                    data,
+                    file,
+                    indent=4
+                )
+
+
+            print(
+                "Production counts reset."
+            )
+
+
+        except Exception as e:
+
+            print(
+                "Reset Error:",
+                e
+            )
+
+
+
+    # -----------------------------
+    # Read Dashboard JSON
     # -----------------------------
 
     def update_dashboard(self):
@@ -203,7 +313,7 @@ class ProductionDashboard(QWidget):
             stations = data["stations"]
 
 
-            for i,station in enumerate(stations):
+            for i, station in enumerate(stations):
 
                 self.station_cards[i].update_data(
                     station
